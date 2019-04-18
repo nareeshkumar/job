@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="{%static "css/index.css"%}">
+
+</head>
+<body>
+<h1>below are the employees who is working in Bangalore location</h1>
+<h2>
+
+        {%if list%}
+        {%for emp in list%}
+    <ol>
+        <li>{{emp.emp_id}}</li>
+        <li>{{emp.emp_name}}</li>
+        <li>{{emp.emp_add}}</li>
+        <li>{{emp.emp_designation}}</li>
+    </ol>
+        {%endfor%}
+        {%else%}
+        <h2>no employees found</h2>
+        {%endif%}
+
+
+</h2>
+</body>
+</html>
